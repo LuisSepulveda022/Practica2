@@ -14,9 +14,10 @@ int main()
 
     char cadena1[]="h6%o&l1a";     //Creamos las cadenas de caracteres tipo char
     char cadena2[]="h6%o&l1a";
-    longitud1 = sizeof(cadena1);
+    longitud1 = sizeof(cadena1);    //Determinamos la longitud(tamaño) de cada cadena
     longitud2 = sizeof(cadena2);
     Compare_cadenas(cadena1,cadena2,longitud1,longitud2); // Utilizamos la función para comparar las cadenas
+    // Debe mostrar True
 
     cout << endl;
 
@@ -25,6 +26,7 @@ int main()
     longitud1 = sizeof(cadena3);
     longitud2 = sizeof(cadena4);
     Compare_cadenas(cadena3,cadena4,longitud1,longitud2);
+    // Debe mostrar False
 
     cout << endl;
 
@@ -33,6 +35,7 @@ int main()
     longitud1 = sizeof(cade1);
     longitud2 = sizeof(cade2);
     Compare_cadenas(cade1,cade2,longitud1,longitud2);
+    // Debe mostrar Que la longitud de las cadenas no es la misma
 
     return 0;
 }
