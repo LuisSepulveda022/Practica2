@@ -1,23 +1,36 @@
 #include <iostream>
-#include <string.h>
+
 using namespace std;
 /*Escriba un programa que reciba una cadena de caracteres y elimine los caracteres repetidos.
 Ejemplo: se recibe bananas debe mostrar bans.
 Nota: la salida del programa debe ser: Original: bananas. Sin repetidos: bans.*/
+
+int strlen(char s[])    //con esta función encontramos la longitud de la cadena
+{
+int i;
+for (i=0; s[i]!='\0'; i++)
+/* avanzamos hasta el final de la cadena */ ;
+return i;
+}
+
 int main()
 {
-    char palabra[20],modifi[20],original[20];
-    cout << "Ingrese una palabra: ";
-    cin.getline(palabra,20,'\n');
-    //cout << palabra <<endl;
-    //original = palabra;
+    char palabra[30],modificada[30],original[30]; //en la variable palabra almacenamos lo ingresado por consola
+    cout << "Ingrese una palabra: ";          //en  modificada almacenamos la plabra sin letras repetidas
+    cin.getline(palabra,30,'\n');             //en original guardamos los caracteres ingresados
 
-    int longitud = strlen(palabra);
-    for(int j=0; j < longitud ; j++){
-        original[j]=palabra[j];
+
+    int longitud = strlen(palabra);    //almacenamos la longitud de la cadena ingresada
+    cout << longitud <<endl;
+    for(int j=0; j <= longitud ; j++){
+        if (longitud != j){             // almacenamos la cadena ingresada en original
+            original[j]=palabra[j];
+        }else{
+            original[j]='\0';
+        }
     }
-    //original[j]='\0';
-    for (int i=0; i<longitud;i++){
+
+    for (int i=0; i<longitud;i++){     // remplazamos las letras repetidas por un espacio para despues modificarlas
 
         for (int j=longitud-1;j>i;j--){
             if(palabra[i] == palabra[j]){
@@ -26,13 +39,14 @@ int main()
         }
     }
     int posicion=0;
-    for (int i=0; i<longitud;i++){
-        if (palabra[i]!=' '){
-            modifi[posicion]=palabra[i];
+    for (int i=0; i<longitud;i++){      // ya con la variable palabra modificada si es el caso con espacios, ya esa
+        if (palabra[i]!=' '){           // es la base para guardar la palabra modificada en otra variable para mostrala
+            modificada[posicion]=palabra[i];
             posicion ++;
         }
     }
-    modifi[posicion]='\0';
-    cout << original << "  " <<modifi <<endl;
+
+    modificada[posicion]='\0';
+    cout <<"Original: "<<original << "    "<< "Sin repetidos: " <<modificada <<endl;
     return 0;
 }
