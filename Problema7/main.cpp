@@ -20,7 +20,7 @@ int main()
     cin.getline(palabra,30,'\n');             //en original guardamos los caracteres ingresados
 
 
-    int longitud = strlen(palabra);    //almacenamos la longitud de la cadena ingresada
+    int longitud = strlen(palabra);    //utilizamos la función strlen para hallar la longitud de la cadena
 
     for(int j=0; j <= longitud ; j++){
         if (longitud != j){             //almacenamos la cadena ingresada en original
