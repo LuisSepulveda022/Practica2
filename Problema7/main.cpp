@@ -21,16 +21,16 @@ int main()
 
 
     int longitud = strlen(palabra);    //almacenamos la longitud de la cadena ingresada
-    cout << longitud <<endl;
+
     for(int j=0; j <= longitud ; j++){
-        if (longitud != j){             // almacenamos la cadena ingresada en original
+        if (longitud != j){             //almacenamos la cadena ingresada en original
             original[j]=palabra[j];
         }else{
             original[j]='\0';
         }
     }
 
-    for (int i=0; i<longitud;i++){     // remplazamos las letras repetidas por un espacio para despues modificarlas
+    for (int i=0; i<longitud;i++){     //remplazamos las letras repetidas por un espacio para despues modificarlas
 
         for (int j=longitud-1;j>i;j--){
             if(palabra[i] == palabra[j]){
@@ -39,8 +39,8 @@ int main()
         }
     }
     int posicion=0;
-    for (int i=0; i<longitud;i++){      // ya con la variable palabra modificada si es el caso con espacios, ya esa
-        if (palabra[i]!=' '){           // es la base para guardar la palabra modificada en otra variable para mostrala
+    for (int i=0; i<longitud;i++){      //ya con la variable palabra modificada si es el caso con espacios, ya esa
+        if (palabra[i]!=' '){           //es la base para guardar la palabra modificada en otra variable para mostrala
             modificada[posicion]=palabra[i];
             posicion ++;
         }
