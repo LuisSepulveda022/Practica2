@@ -46,7 +46,7 @@ int main()
         }
     }
 
-    modificada[posicion]='\0';
+    modificada[posicion]='\0';  //En la variable original se encuentra la palabra ingresada, y en modificada esta la palabra sin repetidos
     cout <<"Original: "<<original << "    "<< "Sin repetidos: " <<modificada <<endl;
     return 0;
 }
