@@ -15,7 +15,7 @@ char matriz_asientos[15][20];
 int main()
 {
     //asientos();
-    reservas();
+    //reservas();
     return 0;
 }
 
@@ -23,9 +23,18 @@ void asientos(){
 
     for (int i=0;i<15;i++){
         for (int j=0;j<20;j++){
-            matriz_asientos[i][j]='+';
+            if (matriz_asientos[i][j] != '-'){
+                matriz_asientos[i][j]='+';
+            }else if(matriz_asientos[i][j] == '-'){
+                matriz_asientos[i][j]='-';
+            }
         }
     }
+    /*cout << "   ";
+    for(int i = 1; i<21; i++){
+        cout << i << " ";
+    }*/
+    cout << endl;
     for (int i=0;i<15;i++){
         cout << char(65+i) << "  ";
         for (int j=0;j<20;j++){
@@ -53,14 +62,21 @@ void reservas(){
     }else{
         columna= int(reserva[1]-49);
     }
-
     matriz_asientos[fila][columna]='-';
-    for (int i=0;i<15;i++){
+    asientos();
+
+
+    /*for (int i=0;i<15;i++){
         cout << char(65+i) << "  ";
         for (int j=0;j<20;j++){
             cout<<matriz_asientos[i][j]<<" ";
         }
         cout<<endl;
-    }
+    }*/
 }
+void cancelacion(){
 
+    asientos();
+
+
+}
