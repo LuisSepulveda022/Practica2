@@ -16,7 +16,7 @@ int main()
 {
     //asientos();
     reservas();
-    cancelacion();
+    //cancelacion();
     return 0;
 }
 
@@ -63,8 +63,17 @@ void reservas(){
     }else{
         columna= int(reserva[1]-49);
     }
-    matriz_asientos[fila][columna]='-';
-    asientos();
+    if(matriz_asientos[fila][columna] == '-'){
+        cout << "El asiento en posicion "<<reserva[0]<<reserva[1]<<reserva[2] <<" se encuentra reservado ya"<<endl;
+
+        asientos();
+
+    }else{
+        matriz_asientos[fila][columna]='-';
+        asientos();
+        cout <<"\nReserva efectua correctamente en la posicion "<<reserva[0]<<reserva[1]<<reserva[2]<<endl;
+    }
+
 
 
     /*for (int i=0;i<15;i++){
@@ -96,7 +105,14 @@ void cancelacion(){
     }else{
         columna= int(cancelacion[1]-49);
     }
-    matriz_asientos[fila][columna]='+';
+    if(matriz_asientos[fila][columna] == '+'){
+        cout<<"Ese lugar no se encunetra reservado"<<endl;
+    }else{
+        matriz_asientos[fila][columna]='+';
+
+        cout<<"La cancelacion en posicion "<<cancelacion[0]<<cancelacion[1]<<cancelacion[2]<<
+    }
+
     asientos();
 
 }
