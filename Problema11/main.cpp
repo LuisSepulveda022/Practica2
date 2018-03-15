@@ -15,7 +15,8 @@ char matriz_asientos[15][20];
 int main()
 {
     //asientos();
-    //reservas();
+    reservas();
+    cancelacion();
     return 0;
 }
 
@@ -77,6 +78,25 @@ void reservas(){
 void cancelacion(){
 
     asientos();
+    char cancelacion[4];
+    asientos();
+    cout<<"\n\nEscriba el asiento que quiere cancelar, siendo la letra la fila y el numero la columna: ";
+    cin >> cancelacion;
+    int fila,columna;
 
+    fila = int(cancelacion[0]-65);
+    if (cancelacion[2] != '\0'){
+        if(cancelacion[1] != '1'){
+            columna= int(cancelacion[2]-49);
+            columna +=20;
+        }else{
+            columna= int(cancelacion[2]-49);
+            columna +=10;
+        }
+    }else{
+        columna= int(cancelacion[1]-49);
+    }
+    matriz_asientos[fila][columna]='+';
+    asientos();
 
 }
