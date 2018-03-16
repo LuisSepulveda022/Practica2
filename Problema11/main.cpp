@@ -11,7 +11,7 @@ void reservas(); //En esta funcion esta la estructura para realizar una reserva 
 void cancelacion();//En esta funcion esta la estructura para realizar una cancelacion de la sala
 void asientos(); //En esta funcion esta la estrutura para mostrar los asientos de la sala
 
-char matriz_asientos[15][20];
+char matriz_asientos[15][20]; //Creamos una variable global, la cual vamos ha manipular en cada una de las funciones que se necesiten
 int main()
 {
     char var;
