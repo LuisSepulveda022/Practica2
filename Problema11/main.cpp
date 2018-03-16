@@ -17,9 +17,9 @@ int main()
     char var;
     int opcion;
     do{
-        cout <<"    Escoja una opcion del menu"<<endl;
+        cout <<"\n    Escoja una opcion del menu"<<endl;
         cout << "1.Mirar los asientos de la sala.\n2.Reservar un asiento de la sala.\n3.Cancelar una reserva."<<endl;
-        cout <<"Dijite una opcion: ";
+        cout <<"\nDijite una opcion: ";
         cin >> opcion;
 
         switch (opcion) {
@@ -37,7 +37,7 @@ int main()
             break;
         }
 
-        cout << "Desea continuar(s:continuar o n:salir): ";
+        cout << "\n\nDesea continuar(s:continuar o n:salir): ";
         cin >>var;
 
     }while(var == 's' or var == 'S');
@@ -60,7 +60,7 @@ void asientos(){
         }
     }
     /*cout << "   ";
-    for(int i = 1; i<21; i++){
+    for(int i = 1; i<21; i++){  //imprimir los numero de columnas
         cout << i << " ";
     }*/
     cout << endl;
@@ -75,7 +75,7 @@ void asientos(){
 void reservas(){
     char reserva[4];
     asientos();
-    cout<<"\n\nEscriba el asiento que quiere reservar, siendo la letra la fila y el numero la columna: ";
+    cout<<"\n\nEscriba el asiento que quiere reservar\nsiendo las letras(A-O) las filas, y los numeros(1-20) las columnas: ";
     cin >> reserva;
     int fila,columna;
 
@@ -92,14 +92,14 @@ void reservas(){
         columna= int(reserva[1]-49);
     }
     if(matriz_asientos[fila][columna] == '-'){
-        cout << "El asiento en posicion "<<reserva[0]<<reserva[1]<<reserva[2] <<" se encuentra reservado ya"<<endl;
+        cout << "\nEl asiento en posicion "<<reserva[0]<<reserva[1]<<reserva[2] <<"se encuentra reservado ya.\nPor lo cual no se puede reservar en esa posicion"<<endl;
 
-        asientos();
+
 
     }else{
         matriz_asientos[fila][columna]='-';
         asientos();
-        cout <<"\nReserva efectua correctamente en la posicion "<<reserva[0]<<reserva[1]<<reserva[2]<<endl;
+        cout <<"\nLa reserva en posicion "<<reserva[0]<<reserva[1]<<reserva[2]<<"se efectuo correctamente"<<endl;
     }
 
 
@@ -109,7 +109,7 @@ void cancelacion(){
     asientos();
     char cancelacion[4];
     asientos();
-    cout<<"\n\nEscriba el asiento que quiere cancelar, siendo la letra la fila y el numero la columna: ";
+    cout<<"\n\nEscriba el asiento que quiere cancelar\nsiendo las letras(A-O) las filas, y los numeros(1-20) las columnas: ";
     cin >> cancelacion;
     int fila,columna;
 
@@ -126,11 +126,11 @@ void cancelacion(){
         columna= int(cancelacion[1]-49);
     }
     if(matriz_asientos[fila][columna] == '+'){
-        cout<<"Ese lugar en posicion "<<cancelacion[0]<<cancelacion[1]<<cancelacion[2]<<" no esta reservado"<<endl;
+        cout<<"\nEse lugar en posicion "<<cancelacion[0]<<cancelacion[1]<<cancelacion[2]<<" no esta reservado.\nPor lo tanto no puede cancelar ninguna reserva."<<endl;
     }else{
         matriz_asientos[fila][columna]='+';
 
-        cout<<"La cancelacion en posicion "<<cancelacion[0]<<cancelacion[1]<<cancelacion[2]<<" se efectu correctamente"<< endl;
+        cout<<"\nLa cancelacion en posicion "<<cancelacion[0]<<cancelacion[1]<<cancelacion[2]<<" se efectu correctamente."<< endl;
         asientos();
     }
 
