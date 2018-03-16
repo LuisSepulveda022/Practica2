@@ -14,8 +14,36 @@ void asientos();
 char matriz_asientos[15][20];
 int main()
 {
+    char var;
+    int opcion;
+    do{
+        cout <<"    Escoja una opcion del menu"<<endl;
+        cout << "1.Mirar los asientos de la sala.\n2.Reservar un asiento de la sala.\n3.Cancelar una reserva."<<endl;
+        cout <<"Dijite una opcion: ";
+        cin >> opcion;
+
+        switch (opcion) {
+        case 1:
+            asientos();
+            break;
+        case 2:
+            reservas();
+            break;
+        case 3:
+            cancelacion();
+            break;
+        default:
+            cout << "Usted no escogio una opcion correcta"<<endl;
+            break;
+        }
+
+        cout << "Desea continuar(s:continuar o n:salir): ";
+        cin >>var;
+
+    }while(var == 's' or var == 'S');
+
     //asientos();
-    reservas();
+    //reservas();
     //cancelacion();
     return 0;
 }
@@ -75,14 +103,6 @@ void reservas(){
     }
 
 
-
-    /*for (int i=0;i<15;i++){
-        cout << char(65+i) << "  ";
-        for (int j=0;j<20;j++){
-            cout<<matriz_asientos[i][j]<<" ";
-        }
-        cout<<endl;
-    }*/
 }
 void cancelacion(){
 
@@ -106,13 +126,13 @@ void cancelacion(){
         columna= int(cancelacion[1]-49);
     }
     if(matriz_asientos[fila][columna] == '+'){
-        cout<<"Ese lugar no se encunetra reservado"<<endl;
+        cout<<"Ese lugar en posicion "<<cancelacion[0]<<cancelacion[1]<<cancelacion[2]<<" no esta reservado"<<endl;
     }else{
         matriz_asientos[fila][columna]='+';
 
-        cout<<"La cancelacion en posicion "<<cancelacion[0]<<cancelacion[1]<<cancelacion[2]<<
+        cout<<"La cancelacion en posicion "<<cancelacion[0]<<cancelacion[1]<<cancelacion[2]<<" se efectu correctamente"<< endl;
+        asientos();
     }
 
-    asientos();
 
 }
