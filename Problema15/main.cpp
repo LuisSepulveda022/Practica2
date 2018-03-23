@@ -2,10 +2,20 @@
 
 using namespace std;
 
+int* interseccion( int * , int *);
 int main()
 {
-    int recta1[] ={0,0,8,4},recta2[]={5,2,6,7};
-    int interse[4];
+    int a[] ={0,0,8,4},b[]={5,2,6,7};
+    //int interse[4];
+    int *inter;
+    inter = interseccion(a,b);
+
+    cout << inter[0] << " " << inter[1] << " " << inter[2] << " " << inter[3] << endl;
+    return 0;
+}
+
+int * interseccion(int *recta1 , int *recta2){
+    int *recta3 = new int[4];
     int x1,y1,a1,h1,x2,y2,a2,h2,x3,y3,a3,h3;
 
     x1 = recta1[0];
@@ -42,12 +52,12 @@ int main()
         if (y3 < (y1+h1))
             h3 = (y1+h1)-y3;
     }
-    //cout << y3 << endl;
 
-    interse[0]=x3;
-    interse[1]=y3;
-    interse[2]=a3;
-    interse[3]=h3;
-    cout << interse[0] << " " << interse[1] << " " << interse[2] << " " << interse[3] << endl;
-    return 0;
+    recta3[0]=x3;
+    recta3[1]=y3;
+    recta3[2]=a3;
+    recta3[3]=h3;
+    //cout << interse[0] << " " << interse[1] << " " << interse[2] << " " << interse[3] << endl;
+
+    return recta3;
 }
